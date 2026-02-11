@@ -146,7 +146,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
   createChat({
     webhookUrl: 'https://n8n1.m1nz.org/webhook/b51161bb-fc25-489c-a7d1-1e017c14980d/chat',
-    target: '#n8n-chat'
+    target: '#n8n-chat',
+    defaultLanguage: 'en',
+    initialMessages: [
+    'Hello! 👋',
+    'I am your Student Data Bot for UCL. How can I help you today?'
+  ],
   });
 </script>
 
