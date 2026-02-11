@@ -3,6 +3,8 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+
 ---
 
 <!DOCTYPE html>
@@ -134,15 +136,21 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 
-  <!-- n8n Chatbot -->
-  <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/style.css" rel="stylesheet" />
-  <script type="module">
-    import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/chat.bundle.es.js';
+<!-- n8n Chatbot -->
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/style.css" rel="stylesheet" />
 
-    createChat({
-      webhookUrl: 'https://n8n1.m1nz.org/webhook/b51161bb-fc25-489c-a7d1-1e017c14980d/chat'
-    });
-  </script>
+<!-- Chatbot container -->
+<div id="n8n-chat"></div>
+
+<script type="module">
+  import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/chat.bundle.es.js';
+
+  createChat({
+    webhookUrl: 'https://n8n1.m1nz.org/webhook/b51161bb-fc25-489c-a7d1-1e017c14980d/chat',
+    target: '#n8n-chat'
+  });
+</script>
+
 
 </body>
 </html>
